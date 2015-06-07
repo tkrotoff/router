@@ -360,7 +360,7 @@ function anchorLinkDirective($router) {
         if (!href) {
           event.preventDefault();
         }
-        if ($router.recognize(href)) {
+        if (href.indexOf('mailto:') != 0 && $router.recognize(href)) {
           $router.navigate(href);
           event.preventDefault();
         }
